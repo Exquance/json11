@@ -250,15 +250,16 @@ Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(move(valu
  * Accessors
  */
 
-Json::Type Json::type()                           const { return m_ptr->type();         }
-double Json::number_value()                       const { return m_ptr->number_value(); }
-int Json::int_value()                             const { return m_ptr->int_value();    }
-bool Json::bool_value()                           const { return m_ptr->bool_value();   }
-const string & Json::string_value()               const { return m_ptr->string_value(); }
-const vector<Json> & Json::array_items()          const { return m_ptr->array_items();  }
-const map<string, Json> & Json::object_items()    const { return m_ptr->object_items(); }
-const Json & Json::operator[] (size_t i)          const { return (*m_ptr)[i];           }
-const Json & Json::operator[] (const string &key) const { return (*m_ptr)[key];         }
+Json::Type                Json::type()                           const { return m_ptr->type();         }
+
+double                    Json::number_value()                   const { return m_ptr->number_value(); }
+int                       Json::int_value()                      const { return m_ptr->int_value();    }
+bool                      Json::bool_value()                     const { return m_ptr->bool_value();   }
+const string &            Json::string_value()                   const { return m_ptr->string_value(); }
+const vector<Json> &      Json::array_items()                    const { return m_ptr->array_items();  }
+const map<string, Json> & Json::object_items()                   const { return m_ptr->object_items(); }
+const Json &              Json::operator[] (size_t i)            const { return (*m_ptr)[i];           }
+const Json &              Json::operator[] (const string &key)   const { return (*m_ptr)[key];         }
 
 double                    JsonValue::number_value()              const { return 0; }
 int                       JsonValue::int_value()                 const { return 0; }
